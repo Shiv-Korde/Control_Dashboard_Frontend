@@ -25,16 +25,7 @@ const ActiveCard = () => {
 
   return (
     <div>
-      {activeFuelStations.map((single) => {
-        const {
-          fs_id,
-          status,
-          last_seen,
-          last_updated_timestamp,
-          temperature,
-          humidity,
-        } = single;
-        return (
+      
           <FlexBetween sx={{ m: "2rem 5rem" }}>
             <TableContainer component={Paper} sx={{bgcolor: 'primary.main'}}>
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -80,8 +71,6 @@ const ActiveCard = () => {
               </Table>
             </TableContainer>
           </FlexBetween>
-        );
-      })}
     </div>
   );
 };
