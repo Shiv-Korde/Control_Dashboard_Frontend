@@ -34,9 +34,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const handleClose = () => setAnchorEl(null);
 
   return (
-    <AppBar
+    <AppBar 
       sx={{
-        position: "static",
+        position:"static",
         background: "none",
         boxShadow: "none",
       }}

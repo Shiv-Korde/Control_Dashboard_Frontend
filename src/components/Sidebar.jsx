@@ -54,19 +54,15 @@ const navItems = [
   {
     text: "Inactive",
     icon: <NotificationsOffIcon />,
+  },
+  {
+    text: "Management",
+    icon: null,
+  },
+  {
+    text: "Admin",
+    icon: <AdminPanelSettingsOutlined/>,
   }
-  // {
-  //   text: "Management",
-  //   icon: null,
-  // },
-  // {
-  //   text: "Admin",
-  //   icon: <AdminPanelSettingsOutlined/>,
-  // },
-  // {
-  //   text: "Performance",
-  //   icon: <TrendingUpOutlined />,
-  // },
 ];
 
 const Sidebar = ({
@@ -123,7 +119,7 @@ const Sidebar = ({
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    <Typography key={text} sx={{ m: "2rem 0 0.8rem 3rem" }}>
                       {text}
                     </Typography>
                   );

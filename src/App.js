@@ -27,6 +27,8 @@ function App() {
               <Route path="/inactive" element={<InActiveCard />} />
               <Route path="/card view" element={<GridCard />} />
               <Route path="/list view" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/admin" element={<Navigate to="/" replace />} />
+              <Route path="/performance" element={<Navigate to="/" replace />} />
             </Route>
           </Routes>
         </ThemeProvider>

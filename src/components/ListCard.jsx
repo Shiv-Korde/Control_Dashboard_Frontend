@@ -49,27 +49,27 @@ const ListCard = (props) => {
 
   useEffect(() => {}, [listViewOn]);
   return (
-    <FlexBetween sx={{ m: "2rem 5rem" }}>
-      <TableContainer component={Paper} sx={{bgcolor: 'primary.main'}}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <FlexBetween sx={{ m: "1rem 4rem" }}>
+      <TableContainer component={Paper} sx={{bgcolor: 'primary.main',maxHeight: "32rem"}}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table" stickyHeader>
           <TableHead>
             <TableRow >
               <TableCell>
                 <strong>fs_id</strong>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <strong>Status</strong>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <strong>Last Seen</strong>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <strong>Humidity&nbsp;(%)</strong>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <strong>Temperature&nbsp;(^c)</strong>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="center">
                 <strong>Last Updated Timestamp</strong>
               </TableCell>
             </TableRow>
@@ -83,11 +83,11 @@ const ListCard = (props) => {
                 <TableCell component="th" scope="row">
                   {row.fs_id}
                 </TableCell>
-                <TableCell align="right">{row.status}</TableCell>
-                <TableCell align="right">{row.last_seen}</TableCell>
-                <TableCell align="right">{row.humidity}</TableCell>
-                <TableCell align="right">{row.temperature}</TableCell>
-                <TableCell align="right">
+                <TableCell align="center">{row.status}</TableCell>
+                <TableCell align="center">{row.last_seen}</TableCell>
+                <TableCell align="center">{row.humidity}</TableCell>
+                <TableCell align="center">{row.temperature}</TableCell>
+                <TableCell align="center">
                   {row.last_updated_timestamp}
                 </TableCell>
               </TableRow>

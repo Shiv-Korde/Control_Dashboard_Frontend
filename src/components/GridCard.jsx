@@ -23,7 +23,7 @@ const GridCard = (props) => {
         return "secondary";
         break;
       case "Inactive":
-        return "primary";
+        return "text";
         break;
       default:
         return "primary";
@@ -60,7 +60,7 @@ const GridCard = (props) => {
   useEffect(() => {}, [listViewOn]);
   return (
     <FlexBetween sx={{ ml: "10rem" }}>
-      <Grid container spacing={12} marginTop={4}>
+      <Grid  container  spacing={12} marginTop={2}>
         {fuelStations.map((single) => {
           const {
             fs_id,

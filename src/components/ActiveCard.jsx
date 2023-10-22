@@ -12,7 +12,8 @@ const ActiveCard = () => {
 
   useEffect(() => {
     // Define the URL for your Express server
-    const apiUrl = "https://vast-gray-angelfish-tam.cyclic.app/active-fuel-stations"; // Update with your server URL
+    const apiUrl =
+      "https://vast-gray-angelfish-tam.cyclic.app/active-fuel-stations"; // Update with your server URL
 
     fetch(apiUrl)
       .then((response) => response.json())
@@ -25,52 +26,56 @@ const ActiveCard = () => {
 
   return (
     <div>
-      
-          <FlexBetween sx={{ m: "2rem 5rem" }}>
-            <TableContainer component={Paper} sx={{bgcolor: 'primary.main'}}>
-              <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>
-                      <strong>Id</strong>
-                    </TableCell>
-                    <TableCell align="right">
-                      <strong>Status</strong>
-                    </TableCell>
-                    <TableCell align="right">
-                      <strong>Last Seen</strong>
-                    </TableCell>
-                    <TableCell align="right">
-                      <strong>Humidity&nbsp;(%)</strong>
-                    </TableCell>
-                    <TableCell align="right">
-                      <strong>Temperature&nbsp;(^c)</strong>
-                    </TableCell>
-                    <TableCell align="right">
-                      <strong>Last Updated Timestamp</strong>
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {activeFuelStations.map((row) => (
-                    <TableRow
-                      key={row.name}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell component="th" scope="row">
-                        {row.fs_id}
-                      </TableCell>
-                      <TableCell align="right">{row.status}</TableCell>
-                      <TableCell align="right">{row.last_seen}</TableCell>
-                      <TableCell align="right">{row.humidity}</TableCell>
-                      <TableCell align="right">{row.temperature}</TableCell>
-                      <TableCell align="right">{row.last_updated_timestamp}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </FlexBetween>
+      <FlexBetween sx={{ m: "1rem 4rem" }}>
+        <TableContainer
+          component={Paper}
+          sx={{ bgcolor: "primary.main", maxHeight: "32rem" }}
+        >
+          <Table sx={{ minWidth: 650 }} aria-label="simple table" stickyHeader>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <strong>Id</strong>
+                </TableCell>
+                <TableCell align="center">
+                  <strong>Status</strong>
+                </TableCell>
+                <TableCell align="center">
+                  <strong>Last Seen</strong>
+                </TableCell>
+                <TableCell align="center">
+                  <strong>Humidity&nbsp;(%)</strong>
+                </TableCell>
+                <TableCell align="center">
+                  <strong>Temperature&nbsp;(^c)</strong>
+                </TableCell>
+                <TableCell align="center">
+                  <strong>Last Updated Timestamp</strong>
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {activeFuelStations.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.fs_id}
+                  </TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                  <TableCell align="center">{row.last_seen}</TableCell>
+                  <TableCell align="center">{row.humidity}</TableCell>
+                  <TableCell align="center">{row.temperature}</TableCell>
+                  <TableCell align="center">
+                    {row.last_updated_timestamp}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </FlexBetween>
     </div>
   );
 };
