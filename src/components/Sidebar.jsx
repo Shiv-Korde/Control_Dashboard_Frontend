@@ -54,19 +54,19 @@ const navItems = [
   {
     text: "Inactive",
     icon: <NotificationsOffIcon />,
-  },
-  {
-    text: "Management",
-    icon: null,
-  },
-  {
-    text: "Admin",
-    icon: <AdminPanelSettingsOutlined/>,
-  },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
+  }
+  // {
+  //   text: "Management",
+  //   icon: null,
+  // },
+  // {
+  //   text: "Admin",
+  //   icon: <AdminPanelSettingsOutlined/>,
+  // },
+  // {
+  //   text: "Performance",
+  //   icon: <TrendingUpOutlined />,
+  // },
 ];
 
 const Sidebar = ({

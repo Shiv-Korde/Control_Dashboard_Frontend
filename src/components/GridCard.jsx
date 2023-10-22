@@ -17,6 +17,19 @@ const GridCard = (props) => {
     }
   };
 
+  const statusStyle = (status) => {
+    switch (status) {
+      case "Active":
+        return "secondary";
+        break;
+      case "Inactive":
+        return "primary";
+        break;
+      default:
+        return "primary";
+    }
+  };
+
   useEffect(() => {
     // Define the URL for your Express server
     const apiUrl = "https://vast-gray-angelfish-tam.cyclic.app/fuel-stations"; // Update with your server URL
@@ -32,7 +45,8 @@ const GridCard = (props) => {
 
   useEffect(() => {
     // Define the URL for your Express server
-    const apiUrl = "https://vast-gray-angelfish-tam.cyclic.app/active-fuel-stations"; // Update with your server URL
+    const apiUrl =
+      "https://vast-gray-angelfish-tam.cyclic.app/active-fuel-stations"; // Update with your server URL
 
     fetch(apiUrl)
       .then((response) => response.json())
@@ -45,7 +59,7 @@ const GridCard = (props) => {
 
   useEffect(() => {}, [listViewOn]);
   return (
-    <FlexBetween sx={{ ml:"10rem" }}>
+    <FlexBetween sx={{ ml: "10rem" }}>
       <Grid container spacing={12} marginTop={4}>
         {fuelStations.map((single) => {
           const {
@@ -57,31 +71,46 @@ const GridCard = (props) => {
             humidity,
           } = single;
           return (
-            <Card sx={{ m: "0.5rem 0.5rem", p: "1rem 1rem" ,bgcolor: 'primary.main'}}>
+            <Card
+              sx={{
+                m: "0.5rem 0.5rem",
+                p: "1rem 1rem",
+                backgroundColor: "primary.main"
+                
+              }}
+            >
               <CardContent>
                 <Typography
-                  sx={{ p: "1rem 0rem" ,textAlign:"center"}}
+                  sx={{ p: "1rem 0rem", textAlign: "center" }}
                   variant="h4"
                   component="div"
                 >
-                    <Badge color="secondary" variant="dot">
+                  <Badge color={statusStyle(status)} variant="dot">
                       {fs_id}
                     </Badge>
                 </Typography>
-                <Typography sx={{textAlign:"center"}} variant="body2" color="text.secondary">
+                {/* <Typography
+                  sx={{ textAlign: "center" }}
+                  variant="body2"
+                  color="text.secondary"
+                >
                   {status}
+                </Typography> */}
+                <Typography sx={{ textAlign: "center" }} variant="body2">
+                  Humidity: {humidity}
                 </Typography>
-                <Typography sx={{textAlign:"center"}} variant="body2">Humidity: {humidity}</Typography>
-                <Typography sx={{textAlign:"center"}} variant="body2">Temp: {temperature}</Typography>
+                <Typography sx={{ textAlign: "center" }} variant="body2">
+                  Temp: {temperature}
+                </Typography>
                 <Typography
-                  sx={{ fontSize: 10 ,mt:"2rem",textAlign:"center"}}
+                  sx={{ fontSize: 10, mt: "2rem", textAlign: "center" }}
                   color="text.secondary"
                   gutterBottom
                 >
                   {last_seen}
                 </Typography>
                 <Typography
-                  sx={{ fontSize: 10 ,textAlign:"center"}}
+                  sx={{ fontSize: 10, textAlign: "center" }}
                   color="text.secondary"
                   gutterBottom
                 >
